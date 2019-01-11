@@ -1,0 +1,15 @@
+function ans2 = exercise2(array)
+%returns an array 'ans2' where each element ans2(i) is all the elements of
+%array multiplied together except i
+if ~isvector(array)
+    error('Input must be a vector')
+end
+n=length(array);
+ans2 =ones(1,n);
+for w = 1:n
+    for m = 1:n
+        if (w~=m) 
+            ans2(w)= ans2(w)*array(m);
+        end
+    end
+end
