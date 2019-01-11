@@ -1,0 +1,23 @@
+function ans1 = exercise1(array,sum)
+%if false returns 0
+%if true returns 1 and the numbers that sum correctly
+if ~isvector(array)
+    error('Input array must be a vector')
+end
+if ~isscalar(sum)
+    error('Input sum must be a scalar')
+end
+ans1=0; %false unless it finds a pair which sum to sum
+n = length(array);
+
+for var1 = 1:n
+    for var2 = var1+1:n
+        if (array(var1)+array(var2)==sum) %Tested condition
+            disp( array(var1));
+            disp( array(var2));
+            disp('done');
+            ans1 = 1;
+            return; %returns control out of current fucntion scope
+        end
+    end
+end
